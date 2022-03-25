@@ -25,11 +25,13 @@ namespace tpmodul5_1302204031
         }
         public void IncreasePlayCount(int jumlah)
         {
-            
+            if (jumlah > 10000000)
+                throw new Exception("melebihi batas penambahan play count");
+            try
             {
                 playCount = checked(playCount + jumlah);
             }
-            
+            catch
             {
                 Console.WriteLine("Jumlah play count akan melampaui batas");
             }
